@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {{headContent()}}
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta name="robots" content="noindex, nofollow">
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+      <link href="assets/css/style.css" rel="stylesheet">
+   
+      <title>NIF</title>
+      
+   </head>
+
+
+   <body>
+
+
+      <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+         
+         <div class="d-flex justify-content-center"> <a href="" class="logo d-flex align-items-center"> <img src="assets/img/niff.png"   alt=""> <span class="d-none d-lg-block"></span> </a> <i class="bi bi-list toggle-sidebar-btn"></i></div>
+         
+        
+         <div class="search-bar">
+         
+            <h4 style="padding-top: 8px;">NIF INTERACTIVE MAP - BAY STATES </h4>
+
+         </div>
+       
+        
+        
+
+
+
+         <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+               <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " href="#"> <i class="bi bi-search"></i> </a></li>
+               <li class="nav-item dropdown">
+                  
+                  
+               </li>
+               
+            
+               <li class="nav-item dropdown pe-3">
+                  {{actionBttn("reset", "Reset Map", style="unite", color="danger", icon = icon("arrows-rotate"))}}
+               </li>
+               <li class="nav-item dropdown pe-3">
+                  <img src="assets/img/immap.jpg"  width="110px"  height="40px" alt="">
+           
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <aside id="sidebar" class="sidebar">
+         <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item"> <a class="nav-link " href="#"> <i class="bi bi-grid"></i> <span>LAYER PANEL</span> </a></li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Humanitarian Access <br>(source: NIF-INSO 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li><a href="#!"><span>Area Accessibility</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("accessibleareas", "Accessible areas", FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("hardtoreach", "Hard-to-Reach areas",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("exhardtoreach", "Extremely Hard-to-Reach areas",FALSE)}}</span> </a></li>
+                  <li><a href="#!"><span>Town Accessibility </span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("accessibleT", "Accessible towns",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("exhardtoreachT", "Hard-to-Reach towns",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("hardtoreachT", "Extremely Hard-to-Reach towns",FALSE)}}</span> </a></li>
+                  <li><a href="#!"><span>Road Accessibility</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("accessibleR", "Accessible roads",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("hardtoreachR", "Hard-to-Reach roads",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("CAhardtoreachR", "Accessible for cargo movement only",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("exhardtoreachR", "Extremely Hard-to-Reach roads",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Returns and Relocations <br>(source: NIF 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("took", "Areas where relocations took place",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("ana", "Areas announced for relocation",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>IDP<br>(source: IOM 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("idp1", "Formal sites",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("idp2", "Informal sites", FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("no", "Population of IDP by LGA",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("no1", "Population of IDP by state",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Humanitarian Needs<br> (source: OCHA 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("HNO1", "Severity of needs",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("HNO2", "People in need",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>IPC Acute Malnutrition Analysis <br>(source: IPC - November 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("Cu", "Current situation Oct - Dec 2022", FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("Pro", "Projected situation Jan - April 2023", FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Food Insecurity Situation <br>(source: CH - November 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("food", "Current situation Oct - Dec 2022", FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("food1", "Projected situation June - Aug 2023",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#v" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Floods</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="v" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("flood", "Flood risk areas (IJAGR 2022)",FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("flood1", "Impacted Population (WFP 2022)",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#vY" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Cholera Situation <br>(source: OCHA 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="vY" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("col", "Cholera cases and deaths",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#vYu" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Security Situation<br> (source: INSO 2022)</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="vYu" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("inso", "Conflict related incidents in 2022",FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+
+
+            <li class="nav-item">
+               <a class="nav-link collapsed" data-bs-target="#navc" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Administrative Boundaries</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+               <ul id="navc" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li> <a href="#!"><span>{{awesomeCheckbox("State", "State boundaries",TRUE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("LGA", "LGA /INGO presence",FALSE)}}</span> </a> </li> 
+                  <li> <a href="#!"><span>{{awesomeCheckbox("LG", "LGA Labels", FALSE)}}</span> </a></li>
+                  <li> <a href="#!"><span>{{awesomeCheckbox("Ward", "Ward boundaries", FALSE)}}</span> </a></li>
+               </ul>
+            </li>
+        
+         </ul>
+      </aside>
+      <main id="main">
+         <div id="mapid">{{leafletOutput("mymap")}}</div>
+      </main>
+
+
+
+
+
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script> 
+             
+   </body>
+</html>
